@@ -2,4 +2,6 @@
 header{padding:12px max(24px,calc((100vw - 1060px)/2 + 18px));gap:28px}
 nav{gap:2px}
 nav a{padding:10px 14px;font-size:15px}
+
+.nv4 a{display:flex;flex-direction:column}.nv4 a em{margin-top:auto}
 }
