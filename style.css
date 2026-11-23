@@ -41,7 +41,7 @@ header{gap:10px 14px}nav{scrollbar-width:none;scroll-snap-type:x proximity}nav::
 @media(max-width:900px){.strip,.fnd,.nv4{grid-template-columns:1fr 1fr}.strip>div:nth-child(3){border-left:0}.strip>div:nth-child(n+3){border-top:1px solid var(--ln)}}
 @media(max-width:520px){.strip,.fnd,.nv4{grid-template-columns:1fr}.strip>div{border-left:0;border-top:1px solid var(--ln)}.strip>div:first-child{border-top:0}}
 @media(max-width:760px){.hero,.g2,.sl{grid-template-columns:1fr}.bar>span{width:120px}}
-@media(prefers-reduced-motion:no-preference){main>section:not([hidden]){animation:in .6s ease-out}@keyframes in{from{opacity:0;transform:translateY(10px)}}}
+@media(prefers-reduced-motion:no-preference){main>section:not([hidden]){animation:in .3s ease-out}@keyframes in{from{opacity:0;transform:translateY(10px)}}}
 
 h1,h2,.logo,.big,.stats b,.fnd b,.pl b{font-family:Archivo,sans-serif;font-stretch:112%;font-weight:800;letter-spacing:-.015em}
 h1{font-size:clamp(32px,4.4vw,54px);line-height:1.04}h2{font-size:26px}h3,.mk h4{font-family:Archivo,sans-serif;font-stretch:100%;font-weight:700;letter-spacing:0}
@@ -62,4 +62,4 @@ nav a{padding:10px 14px;font-size:15px}
 }
 @media(max-width:900px){.stats{grid-template-columns:1fr 1fr}.hero{grid-template-columns:1fr;gap:20px}}
 .nv4 a{display:flex;flex-direction:column}.nv4 a em{margin-top:auto}
-@media(prefers-reduced-motion:no-preference){.gh,.gv{transform-box:fill-box;animation:.7s cubic-bezier(.2,.8,.2,1) backwards}.gh{transform-origin:left center;animation-name:gx}.gv{transform-origin:center bottom;animation-name:gy}@keyframes gx{from{transform:scaleX(0)}}@keyframes gy{from{transform:scaleY(0)}}.gl{stroke-dasharray:1;animation:gl 1s ease-out backwards}@keyframes gl{from{stroke-dashoffset:1}}polyline.gl:nth-of-type(2){animation-delay:.08s}polyline.gl:nth-of-type(3){animation-delay:.16s}polyline.gl:nth-of-type(4){animation-delay:.24s}polyline.gl:nth-of-type(5){animation-delay:.32s}polyline.gl:nth-of-type(6){animation-delay:.4s}.gd{animation:gf .7s ease-out backwards}@keyframes gf{from{opacity:0}}}
+@media(prefers-reduced-motion:no-preference){.gh,.gv{transform-box:fill-box;animation:.7s cubic-bezier(.2,.8,.2,1) backwards}.gh{transform-origin:left center;animation-name:gx}.gv{transform-origin:center bottom;animation-name:gy}@keyframes gx{from{transform:scaleX(0)}}@keyframes gy{from{transform:scaleY(0)}}.gl{stroke-dasharray:1;animation:gl 1s ease-out backwards}@keyframes gl{from{stroke-dashoffset:1}}polyline.gl:nth-of-type(2){animation-delay:.08s}polyline.gl:nth-of-type(3){animation-delay:.16s}polyline.gl:nth-of-type(4){animation-delay:.24s}polyline.gl:nth-of-type(5){animation-delay:.32s}polyline.gl:nth-of-type(6){animation-delay:.4s}.gd{animation:gf .6s cubic-bezier(.3,.7,.3,1) backwards}@keyframes gf{from{stroke-dasharray:0 var(--c)}}}
