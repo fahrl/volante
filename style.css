@@ -41,7 +41,7 @@ header{gap:10px 14px}nav{scrollbar-width:none;scroll-snap-type:x proximity}nav::
 @media(max-width:900px){.strip,.fnd,.nv4{grid-template-columns:1fr 1fr}.strip>div:nth-child(3){border-left:0}.strip>div:nth-child(n+3){border-top:1px solid var(--ln)}}
 @media(max-width:520px){.strip,.fnd,.nv4{grid-template-columns:1fr}.strip>div{border-left:0;border-top:1px solid var(--ln)}.strip>div:first-child{border-top:0}}
 @media(max-width:760px){.hero,.g2,.sl{grid-template-columns:1fr}.bar>span{width:120px}}
-@media(prefers-reduced-motion:no-preference){.hero{animation:in .5s ease-out}@keyframes in{from{opacity:0;transform:translateY(8px)}}}
+@media(prefers-reduced-motion:no-preference){main>section:not([hidden]){animation:in .3s ease-out}@keyframes in{from{opacity:0;transform:translateY(10px)}}}
 
 h1,h2,.logo,.big,.stats b,.fnd b,.pl b{font-family:Archivo,sans-serif;font-stretch:112%;font-weight:800;letter-spacing:-.015em}
 h1{font-size:clamp(32px,4.4vw,54px);line-height:1.04}h2{font-size:26px}h3,.mk h4{font-family:Archivo,sans-serif;font-stretch:100%;font-weight:700;letter-spacing:0}
