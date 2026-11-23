@@ -7,8 +7,11 @@ const FL=['Operan','Akurasi operan (%)','Porsi operan di sisi lawan','Porsi bola
 const cap=s=>s.replace(/\b\w/g,c=>c.toUpperCase()),tn=i=>D.types[i].replace(/^\w\. /,''),f2=(v,d=2)=>(+v).toFixed(d).replace('.',','),hc=v=>`rgba(${v>0?'11,122,90':'217,162,27'},${Math.min(Math.abs(v),1)*.45})`;
 const dot=i=>`<i class="dot" style="background:${TC[i]}"></i>`;
 const tabs=['beranda','dataset','model','prediksi','pergeseran'];
-function show(){const h=(location.hash||'#beranda').slice(1),t=tabs.includes(h)?h:'beranda';tabs.forEach(k=>{$('#'+k).hidden=k!==t});document.querySelectorAll('#nv a').forEach(a=>{const on=a.hash==='#'+t;a.classList.toggle('on',on);if(on&&a.scrollIntoView)a.scrollIntoView({inline:'center',block:'nearest'})});scrollTo(0,0)}
-addEventListener('hashchange',show);
+const PM=/^https?:$/.test(location.protocol)&&self===top,seg=()=>location.pathname.split('/').filter(Boolean),TT={beranda:'Volante · Analisis Gaya Bermain Klub',dataset:'Dataset · Volante',model:'Model · Volante',prediksi:'Prediksi · Volante',pergeseran:'Pergeseran · Volante'};
+const BASE=PM?(()=>{const p=seg();if(tabs.includes(p[p.length-1]))p.pop();if(p.length&&/\./.test(p[p.length-1]))p.pop();return '/'+p.join('/')+(p.length?'/':'')})():'';
+function cur(){if(PM){const l=seg().pop();return tabs.includes(l)?l:'beranda'}const h=(location.hash||'#beranda').slice(1);return tabs.includes(h)?h:'beranda'}
+function show(){const t=cur();tabs.forEach(k=>{$('#'+k).hidden=k!==t});document.querySelectorAll('#nv a').forEach(a=>{const on=a.getAttribute('href')==='#'+t;a.classList.toggle('on',on);if(on&&a.scrollIntoView)a.scrollIntoView({inline:'center',block:'nearest'})});document.title=TT[t];scrollTo(0,0)}
+if(PM){const lh=location.hash.slice(1);if(tabs.includes(lh))history.replaceState(null,'',BASE+(lh==='beranda'?'':lh));document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a||e.metaKey||e.ctrlKey||e.shiftKey||e.button)return;const k=a.getAttribute('href').slice(1);if(!tabs.includes(k))return;e.preventDefault();history.pushState(null,'',BASE+(k==='beranda'?'':k));show()});addEventListener('popstate',show)}else addEventListener('hashchange',show);
 $('#st').innerHTML=[[D.n_match.toLocaleString('id-ID'),'klub-pertandingan'],[D.n_cs,'profil musiman klub'],[D.comp.length+' dimensi',f2(D.var.reduce((a,b)=>a+b)*100,0)+'% varians dijelaskan'],['3 tipe','dari '+D.n_club+' klub']].map(a=>`<div><b>${a[0]}</b><span>${a[1]}</span></div>`).join('');
 // Dataset
 const lgs=[...new Set(D.rows.map(r=>r[0]))].sort(),sss=[...new Set(D.rows.map(r=>r[1]))].sort();
